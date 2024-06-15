@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <h1>Add New Book</h1>
+  <form method="POST">
+    <label for="title">Title</label>
+    <input type="text" name="title" required>
+    <label for="author">Author</label>
+    <input type="text" name="author" required>
+    <label for="genre">Genre</label>
+    <input type="text" name="genre" required>
+    <label for="price">Price</label>
+    <input type="number" step="0.01" name="price" required>
+    <button type="submit">Add Book</button>
+  </form>
+{% endblock %}
