@@ -14,12 +14,23 @@ def create_tables():
     db.create_all()
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        if username == 'varun' and password == '12345':
+            return redirect(url_for('index.html'))
+        else:
+            return 'Invalid username or password'
+    return render_template('login.html')
+
+
 @app.route('/')
 def index():
     books = Book.query.all()
     return render_template('index.html', books=books)
-
-
 
 
 @app.route('/add', methods=['GET', 'POST'])
