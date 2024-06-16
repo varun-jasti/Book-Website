@@ -20,6 +20,8 @@ def index():
     return render_template('index.html', books=books)
 
 
+
+
 @app.route('/add', methods=['GET', 'POST'])
 def add_book():
     if request.method == 'POST':
