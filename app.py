@@ -7,15 +7,18 @@ app.config['SECRET_KEY'] = 'Sunny@7890'
 
 db.init_app(app)
 
+
 @app.before_request
 def create_tables():
     print("Creating tables...")
     db.create_all()
 
+
 @app.route('/')
 def index():
     books = Book.query.all()
     return render_template('index.html', books=books)
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_book():
@@ -31,6 +34,7 @@ def add_book():
         return redirect(url_for('index'))
     return render_template('add_book.html')
 
+
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit_book(id):
     book = Book.query.get_or_404(id)
@@ -44,6 +48,7 @@ def edit_book(id):
         return redirect(url_for('index'))
     return render_template('edit_book.html', book=book)
 
+
 @app.route('/delete/<int:id>')
 def delete_book(id):
     book = Book.query.get_or_404(id)
@@ -52,5 +57,6 @@ def delete_book(id):
     flash('Book Deleted Successfully!')
     return redirect(url_for('index'))
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
