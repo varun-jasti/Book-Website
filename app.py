@@ -16,15 +16,9 @@ def create_tables():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-
-        if username == 'varun' and password == '12345':
-            return redirect(url_for('index.html'))
-        else:
-            return 'Invalid username or password'
     return render_template('login.html')
+
+
 
 
 @app.route('/')

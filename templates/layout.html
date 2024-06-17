@@ -7,16 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <title>Book Hub</title>
   <style>
-    .dimmed-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      opacity: 0.8;
-      z-index: -1;
-    }
+    
   </style>
 </head>
 
@@ -68,6 +59,12 @@
       {% endwith %}
       {% block content %}{% endblock %}
     </div>
+    <!-- <div>
+      <img src="static/hero.png">
+    </div> -->
+    {% include 'home.html' %}
+    {% include 'footer.html' %}
+  </div>
 </body>
 
 </html>

@@ -18,15 +18,15 @@
 <body>
   <div class="container-fluid fnavbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand">
-      <img class="mh-100" style="max-width: 120px; max-height: 80px;"
+      <img class="mh-100" style="max-width: 130px; max-height: 80px;"
         src=" {{ url_for('static', filename='logo.png' ) }}">
     </a>
     <form class="d-flex w-50" role="search">
       <input class="form-control" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <form action="{{ url_for('static',filename='login.html') }}">
-      <button type="submit" class="btn btn-outline-primary">Login/Register</button>
+    <form action="{{ url_for('login' ) }}" method="post" ) }}">
+      <button type="submit" class="btn btn-outline-primary">Login</button>
     </form>
   </div>
 
