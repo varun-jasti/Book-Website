@@ -16,18 +16,29 @@
 </head>
 
 <body>
-  <div class="container-fluid fnavbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid fnavbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand">
       <img class="mh-100" style="max-width: 130px; max-height: 80px;"
         src=" {{ url_for('static', filename='logo.png' ) }}">
     </a>
-    <form class="d-flex w-50" role="search">
+    <form class="d-flex w-50 mx-4" role="search">
       <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <button style="margin-left: 10px;" class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <form action="{{ url_for('login' ) }}" method="post" ) }}">
-      <button type="submit" class="btn btn-outline-primary">Login</button>
-    </form>
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="bi bi-heart"></i> Wishlist <span class="badge bg-danger">0</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="static/my_cart.html"><i class="bi bi-cart"></i> Cart <span
+            class="badge bg-danger">3</span></a>
+      </li>
+      <li class="nav-item">
+        <form action="{{ url_for('login' ) }}" method="post" ) }}">
+          <button type="submit" class="btn btn-outline-primary">Login</button>
+        </form>
+      </li>
+    </ul>
   </div>
 
 
